@@ -1,0 +1,42 @@
+{
+ "core": {
+  "settingsMenuOpen": false,
+  "mockMenuOpen": false,
+  "order": [
+   "youtube",
+   "twitch",
+   "tiktok",
+   "twitter"
+  ],
+  "hideMissingSetups": true,
+  "fontSize": "80",
+  "isFullWidth": false
+ },
+ "setup": {
+  "status": "LOADED",
+  "youtube": {
+   "isSetup": true,
+   "status": "LOADING",
+   "key": "",
+   "userId": ""
+  },
+  "twitch": {
+   "isSetup": true,
+   "status": "LOADING",
+   "key": "",
+   "userId": ""
+  },
+  "tiktok": {
+   "isSetup": false,
+   "status": "LOADING",
+   "key": "",
+   "userId": ""
+  },
+  "twitter": {
+   "isSetup": false,
+   "status": "LOADING",
+   "key": "",
+   "userId": ""
+  }
+ }
+}

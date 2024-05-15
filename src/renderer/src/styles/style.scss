@@ -1,0 +1,316 @@
+:root {
+  --msp-p12: 12px;
+  --msp-window-height: calc(100vh - 43px);
+  --youtube: #c20000;
+  --twitch: #9146ff;
+  --tiktok: #ff0050;
+  --twitter: #1DA1F2;
+}
+
+// Font Size
+html {
+  &[data-size='80'] {
+    font-size: .8rem;
+  }
+  &[data-size='100'] {
+    font-size: 1rem;
+  }
+  &[data-size='120'] {
+    font-size: 1.2rem;
+  }
+}
+
+strong {
+  font-weight: 700;
+}
+
+// Form
+.msp-fcontrol {
+  margin-bottom: 12px;
+
+  &--large {
+    margin-bottom: 24px;
+  }
+}
+
+// Spinner
+.msp-spinner--large {
+  --track-width: 6px;
+  font-size: 3rem;
+}
+
+.msp-spinner-full {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  & > div {
+    margin: 6px auto;
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+}
+
+// Header
+.msp-header {
+  display: flex;
+  align-items: center;
+  padding: 6px var(--msp-p12);
+  border-bottom: 1px solid var(--ev-c-gray-1);
+}
+
+.msp-h-title {
+  flex: 1;
+  font-size: 1.125rem;
+}
+
+.msp-h-actions {
+  margin-left: 12px;
+
+  & > sl-button {
+    margin-left: 6px;
+  }
+}
+
+// Donations
+.msp-donations-cont {
+  min-height: 90px;
+  margin-bottom: 12px;
+  display: flex;
+  overflow-x: auto;
+}
+
+.msp-donations-cont::-webkit-scrollbar {
+  width: .5em;
+  height: .2em;
+  border-radius: 12px;
+}
+ 
+.msp-donations-cont::-webkit-scrollbar-track {
+  border-radius: 12px;
+}
+ 
+.msp-donations-cont::-webkit-scrollbar-thumb {
+  background-color: var(--ev-c-gray-2);
+  outline: 1px solid var(--ev-c-gray-2);
+}
+
+.msp-donation {
+  min-width: 300px;
+  max-width: 300px;
+  margin-right: 12px;
+
+  sl-alert::part(base) {
+    font-size: .8rem;
+    line-height: 1.2;
+  }
+
+  sl-alert::part(message) {
+    padding: 12px;
+  }
+}
+
+// Core
+.msp-core-container {
+  display: flex;
+  height: var(--msp-window-height);
+}
+
+.msp-core-menu {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 6px;
+  border-right: 1px solid var(--ev-c-gray-1);
+}
+
+.msp-cmenu-actions {
+  flex: 1;
+  & > div {
+    margin-bottom: 12px;
+  }
+}
+
+.msp-cbtn-cont {
+  position: relative;
+
+  .msp-cbtn-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background: var(--sl-color-neutral-0);
+    border-radius: 50%;
+
+    &--success {
+      background: var(--sl-color-success-600);
+    }
+
+    &--danger {
+      background: var(--sl-color-danger-600);
+    }
+  }
+}
+
+.msp-core {
+  position: relative;
+  flex: 1;
+  padding: var(--msp-p12);
+  overflow-y: auto;
+
+  .msp-core-alert {
+    margin-bottom: 12px;
+  }
+
+  &.is-full-width {
+    .msp-cdisplay {
+      max-width: 100%;
+    }
+  }
+}
+
+// Chat Display
+.msp-c-core {
+  display: flex;
+
+  .msp-cdisplay {
+    width: 100%;
+    max-width: 400px;
+    margin-right: 12px;
+
+    &--0 {
+      order: 0;
+    }
+
+    &--1 {
+      order: 1;
+    }
+
+    &--2 {
+      order: 2;
+    }
+
+    &--3 {
+      order: 3;
+    }
+  }
+}
+
+.msp-c-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+
+  .msp-c-icon {
+    flex: 1;
+    font-size: 2rem;
+    line-height: 0;
+
+    &.youtube {
+      color: var(--youtube);
+    }
+
+    &.twitch {
+      color: var(--twitch);
+    }
+
+    &.tiktok {
+      color: var(--tiktok);
+    }
+
+    &.twitter {
+      color: var(--twitter);
+    }
+  }
+}
+
+.msp-c-info {
+  font-size: .7rem;
+  margin-bottom: 12px;
+}
+
+// Display
+.msp-c-users {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+
+  & > div {
+    margin-right: 6px;
+  }
+}
+
+.msp-cdisplay {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 100px);
+  height: calc(100vh - 180px);
+  padding: var(--msp-p12);
+  border: 1px solid var(--ev-c-gray-1);
+  border-radius: .3rem;
+}
+
+.msp-message-display {
+  flex: 1;
+  display: flex;
+  flex-direction: column-reverse;
+  overflow-y: auto;
+}
+
+.msp-message-display::-webkit-scrollbar {
+  width: .5em;
+  height: .2em;
+  border-radius: 12px;
+}
+ 
+.msp-message-display::-webkit-scrollbar-track {
+  border-radius: 12px;
+}
+ 
+.msp-message-display::-webkit-scrollbar-thumb {
+  background-color: var(--ev-c-gray-2);
+  outline: 1px solid var(--ev-c-gray-2);
+}
+
+.msp-cmsg {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: .8rem;
+}
+
+.msp-cmicon {
+  min-width: 20px;
+  min-height: 20px;
+  margin-right: 6px;
+  background: var(--ev-c-gray-2);
+  border-radius: 50%;
+}
+
+.msp-cmname {
+  margin-right: 8px;
+  min-width: 60px;
+}
+
+// Chat coloring
+
+// Buttons have active border color if they are setup
+// sl-button.youtube::part(base) {
+//   border-color: var(--youtube);
+// }
+
+// sl-button.twitch::part(base) {
+//   border-color: var(--twitch);
+// }
+
+// sl-button.tiktok::part(base) {
+//   border-color: var(--tiktok);
+// }
+
+// sl-button.twitter::part(base) {
+//   border-color: var(--twitter);
+// }
